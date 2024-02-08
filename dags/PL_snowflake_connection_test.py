@@ -18,6 +18,12 @@ def sql_snowflake_sql_conn_func():
     select * from ACADIA_EDW_STG.TEST_DATA_1
     """
 
+@aql.run_raw_sql(conn_id="snowflake_sql_conn", task_id="sql_1", results_format="pandas_dataframe")
+def sql_1_func():
+    return """
+    select * from ACADIA_EDW_STG.TEST_DATA_1
+    """
+
 default_args={
     "email": [
         "siddhardha.madda@acadiahealthcare.com",
@@ -40,5 +46,9 @@ default_args={
 )
 def PL_snowflake_connection_test():
     sql_snowflake_sql_conn = sql_snowflake_sql_conn_func()
+
+    sql_1 = sql_1_func()
+
+    sql_1 << sql_snowflake_sql_conn
 
 dag_obj = PL_snowflake_connection_test()
