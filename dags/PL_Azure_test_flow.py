@@ -23,10 +23,10 @@ default_args={
     },
 )
 def PL_Azure_test_flow():
-    a_d_l_s_list_operator_1 = ADLSListOperator(
+    adls_files = ADLSListOperator(
         path="https://acadiangdpadls.blob.core.windows.net/ngdp/ngdp_test.csv",
-        azure_data_lake_conn_id="Azure_conn_adls",
-        task_id="a_d_l_s_list_operator_1",
+        azure_data_lake_conn_id="azureconn",
+        task_id="adls_files",
     )
 
 dag_obj = PL_Azure_test_flow()
