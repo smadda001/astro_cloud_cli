@@ -21,7 +21,7 @@ default_args={
 
 @dag(
     default_args=default_args,
-    schedule="0 10,20 * * *",
+    schedule="10-20/5 10-11 * * *",
     start_date=pendulum.from_format("2024-02-09", "YYYY-MM-DD").in_tz("UTC"),
     catchup=False,
     owner_links={
