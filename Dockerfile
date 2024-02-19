@@ -1,4 +1,4 @@
-FROM quay.io/astronomer/astro-runtime:8.1.0
+FROM quay.io/astronomer/astro-runtime:10.3.0
 
 ENV AIRFLOW__CORE__ENABLE_XCOM_PICKLING=True
 ENV AIRFLOW__ASTRO_SDK__DATAFRAME_ALLOW_UNSAFE_STORAGE=True
