@@ -1,4 +1,1 @@
-astro-sdk-python[amazon,databricks,duckdb,google,postgres,snowflake]==1.5.3
-pendulum==2.1.2
-py-cpuinfo==9.0.0
-pyodbc==5.1.0
+
