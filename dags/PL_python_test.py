@@ -67,6 +67,9 @@ def extract_metadata_func():
     df = pd.DataFrame(metadata, index=[0])
     return df
     
+    
+    
+    
 
 @aql.run_raw_sql(conn_id="duckdb_default", task_id="interim_sql", results_format="pandas_dataframe")
 def interim_sql_func(extract_metadata: Table):
