@@ -73,6 +73,10 @@ def extract_metadata_func():
 def interim_sql_func(extract_metadata: Table):
     return """
     SELECT * FROM {{extract_metadata}}
+    
+    
+    
+    
     """
 
 @aql.dataframe(task_id="load_metadata")
@@ -122,4 +126,3 @@ def PL_python_test():
     load_metadata << extract_metadata
 
 dag_obj = PL_python_test()
-
