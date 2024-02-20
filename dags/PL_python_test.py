@@ -122,3 +122,4 @@ def PL_python_test():
     load_metadata << extract_metadata
 
 dag_obj = PL_python_test()
+
