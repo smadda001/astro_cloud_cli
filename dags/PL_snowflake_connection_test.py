@@ -12,7 +12,7 @@ import pendulum
 
 
 
-@aql.run_raw_sql(conn_id="snowflake_sql_conn", task_id="sql_snowflake_sql_conn", results_format="pandas_dataframe")
+@aql.run_raw_sql(conn_id="snowflake_conn_test", task_id="sql_snowflake_sql_conn", results_format="pandas_dataframe")
 def sql_snowflake_sql_conn_func():
     return """
     select * from ACADIA_EDW_STG.TEST_DATA_1
