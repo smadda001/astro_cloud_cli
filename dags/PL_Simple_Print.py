@@ -14,6 +14,10 @@ import pendulum
 def print_hello_func():
     print("Hello World - This is Acadia Health Care")
 
+@aql.dataframe(task_id="python_1")
+def python_1_func():
+    return
+
 default_args={
     "owner": "Siddhardha Madda,Open in Cloud IDE",
 }
@@ -37,6 +41,8 @@ def PL_Simple_Print():
         mssql_conn_id="AzureSQLWB",
         task_id="ms_sql_operator_1",
     )
+
+    python_1 = python_1_func()
 
     ms_sql_operator_1 << print_hello
 

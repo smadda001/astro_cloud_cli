@@ -71,7 +71,7 @@ default_args={
 @dag(
     default_args=default_args,
     schedule=None,
-    start_date=pendulum.from_format("2024-03-04", "YYYY-MM-DD"),
+    start_date=pendulum.from_format("2024-03-05", "YYYY-MM-DD"),
     catchup=False,
     owner_links={
         "Siddhardha Madda": "mailto:siddhardha.madda@acadiahealthcare.com",
