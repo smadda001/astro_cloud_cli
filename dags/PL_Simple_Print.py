@@ -10,13 +10,16 @@ import pandas as pd
 import pendulum
 
 
-@aql.dataframe(task_id="print_hello")
-def print_hello_func():
+@aql.dataframe(task_id="Print_Acadia")
+def Print_Acadia_func():
     print("Hello World - This is Acadia Health Care")
+    
+    
+    
 
 @aql.dataframe(task_id="python_1")
 def python_1_func():
-    return
+    print("SQL Task Completed")
 
 default_args={
     "owner": "Siddhardha Madda,Open in Cloud IDE",
@@ -33,17 +36,19 @@ default_args={
     },
 )
 def PL_Simple_Print():
-    print_hello = print_hello_func()
+    Print_Acadia = Print_Acadia_func()
 
-    ms_sql_operator_1 = MsSqlOperator(
+    Azure_SQL_Operator_Check = MsSqlOperator(
         database="sqldb-AcadiaBI",
         sql="select * from [etl].[MedhostFacilities]",
         mssql_conn_id="AzureSQLWB",
-        task_id="ms_sql_operator_1",
+        task_id="Azure_SQL_Operator_Check",
     )
 
     python_1 = python_1_func()
 
-    ms_sql_operator_1 << print_hello
+    Azure_SQL_Operator_Check << Print_Acadia
+
+    python_1 << Azure_SQL_Operator_Check
 
 dag_obj = PL_Simple_Print()
