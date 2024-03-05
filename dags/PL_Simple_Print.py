@@ -21,6 +21,10 @@ def print_hello_func():
 def python_1_func():
     return
 
+@aql.dataframe(task_id="python_1")
+def python_1_func():
+    return
+
 default_args={
     "owner": "Siddhardha Madda,Open in Cloud IDE",
 }
